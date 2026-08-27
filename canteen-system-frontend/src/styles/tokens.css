@@ -1,0 +1,68 @@
+/* ============================================================
+   Design tokens — "Canteen Ledger" system
+   Concept: a campus token/ledger book. Every rupee is a stamped
+   entry; every student a line in the register. Numerals live in
+   mono type, like figures stamped into a coupon book.
+   ============================================================ */
+
+:root {
+  /* --- Color: named, not generic --- */
+  --ink: #16231F;
+  --ink-soft: #2C3A34;
+  --paper: #F2F5EF;
+  --paper-dim: #E7EBE2;
+  --surface: #FFFFFF;
+  --line: #DBE1D6;
+  --line-strong: #C3CBBC;
+
+  --brass: #B9862B;
+  --brass-dark: #93691E;
+  --brass-tint: #F3E6C8;
+
+  --credit: #2E7A52;
+  --credit-tint: #DCEEE3;
+  --debit: #B23B3B;
+  --debit-tint: #F6DEDE;
+  --info: #33627A;
+  --info-tint: #DCE9EF;
+
+  --text: #16231F;
+  --text-muted: #5C6B63;
+  --text-faint: #8A968E;
+  --text-on-ink: #F2F5EF;
+
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  --shadow-sm: 0 1px 2px rgba(22, 35, 31, 0.06);
+  --shadow-md: 0 4px 16px rgba(22, 35, 31, 0.08);
+  --shadow-lg: 0 12px 32px rgba(22, 35, 31, 0.14);
+
+  --sidebar-w: 232px;
+  --topbar-h: 64px;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
