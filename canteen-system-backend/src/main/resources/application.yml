@@ -1,0 +1,50 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:mysql://localhost:3306/canteen_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
+    username: ${DATABASE_USERNAME:root}
+    password: ${DATABASE_PASSWORD:NewPass123}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  mail:
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:balu262003@gmail.com}
+    password: ${MAIL_PASSWORD:aiqxpqxwplkfjhmf}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+jwt:
+  secret: ${JWT_SECRET:K8pQ2xR9mN4vL7wZ3jH6tY1sD5fG0aB8cE2nM9pQ4rT7uW1xZ6yC3vB5nM8kL2j}
+  expiration: ${JWT_EXPIRATION:86400000}
+
+app:
+  frontend-url: ${FRONTEND_URL:http://localhost:3000}
+
+canteen:
+  wallet:
+    low-balance-threshold: 50.00
+    alert-cooldown-hours: 24
+    alert-cron: "0 0 8 * * *"
+    monthly-allocation-cron: "0 0 6 1 * *"
+  statement:
+    cron: "0 30 6 1 * *"
+  qr:
+    expiration-ms: 90000		
+
+logging:
+  level:
+    com.canteen: INFO
+    org.springframework.mail: DEBUG
