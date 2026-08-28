@@ -3,7 +3,7 @@ version: '3.8'
 services:
   # MySQL Database
   mysql:
-    image: mysql:8.0-alpine
+    image: mysql:8.0
     container_name: canteen_db
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
