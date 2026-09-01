@@ -14,6 +14,10 @@ COPY public ./public
 COPY src ./src
 COPY vite.config.js index.html ./
 
+# Allow build-time override of the API base URL used by Vite
+ARG VITE_API_BASE_URL
+ENV VITE_API_BASE_URL=${VITE_API_BASE_URL:-/api}
+
 # Build the application
 RUN npm run build
 

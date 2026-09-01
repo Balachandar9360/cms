@@ -52,9 +52,11 @@ services:
     build:
       context: ./canteen-system-frontend
       dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: http://${BACKEND_HOST:-backend}:${BACKEND_PORT:-8080}
     container_name: canteen_frontend
     environment:
-      VITE_API_URL: http://${BACKEND_HOST:-localhost}:${BACKEND_PORT:-8080}
+      VITE_API_BASE_URL: http://${BACKEND_HOST:-localhost}:${BACKEND_PORT:-8080}
     ports:
       - "${FRONTEND_PORT:-3000}:80"
     depends_on:
