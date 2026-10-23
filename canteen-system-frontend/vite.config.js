@@ -11,7 +11,7 @@ export default defineConfig({
       // requests going to the same origin (localhost:3000) while Vite
       // forwards them to the Spring Boot server on port 8080.
       "/api": {
-        target: "http://localhost:8080",
+        target: "http://ec2-35-171-169-160.compute-1.amazonaws.com:8080/",
         changeOrigin: true,
       },
     },
